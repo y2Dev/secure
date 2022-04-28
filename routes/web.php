@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MoncompteController;
 
 /*
@@ -18,10 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
 require __DIR__.'/auth.php';
 
 
@@ -33,3 +30,8 @@ Route::get('/moncompte', [MoncompteController::class,'index'])->name("moncompte"
 
 
 Route::get('/panier', [MoncompteController::class,'panier'])->name("panier");
+
+
+Route::get('/admin', [DashboardController::class,'index'])->middleware(['auth'])->name("dashboard");
+
+
