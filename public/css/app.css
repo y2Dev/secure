@@ -930,6 +930,10 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(105 17 231 / var(--tw-bg-opacity));
 }
+.bg-\[\#e7b511\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(231 181 17 / var(--tw-bg-opacity));
+}
 .fill-current {
   fill: currentColor;
 }
@@ -1248,6 +1252,10 @@ select {
 .hover\:bg-\[\#f6f8f9\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(246 248 249 / var(--tw-bg-opacity));
+}
+.hover\:bg-\[\#cbae0a\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(203 174 10 / var(--tw-bg-opacity));
 }
 .hover\:text-gray-500:hover {
   --tw-text-opacity: 1;

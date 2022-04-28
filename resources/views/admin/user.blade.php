@@ -34,25 +34,35 @@
 
     <div class='user-list w-full max-w-lg mx-auto bg-white rounded-xl shadow-xl flex flex-col py-4'>
         <!--User row -->
-        <div class="user-row flex flex-col items-center justify-between cursor-pointer  p-4 duration-300 sm:flex-row sm:py-4 sm:px-8 hover:bg-[#f6f8f9]">
+        @foreach ($users as $user)
+                    <div class="user-row flex flex-col items-center justify-between cursor-pointer  p-4 duration-300 sm:flex-row sm:py-4 sm:px-8 hover:bg-[#f6f8f9]">
             <div class="user flex items-center text-center flex-col sm:flex-row sm:text-left">
                 <div class="avatar-content mb-2.5 sm:mb-0 sm:mr-2.5">
                     <img class="avatar w-20 h-20 rounded-full" src="https://randomuser.me/api/portraits/men/32.jpg"/>
                 </div>
                 <div class="user-body flex flex-col mb-4 sm:mb-0 sm:mr-4">
-                    <a href="#" class="title font-medium no-underline">Wade Warren</a>
+                    <a href="#" class="title font-medium no-underline">{{$user->name}}</a>
                     <div class="skills flex flex-col">
-                        <span class="subtitle text-slate-500">Marketing Liaison</span>
-                        <span class="subtitle text-slate-500">Coordinator 💪</span>
+                        <span class="subtitle text-slate-500">{{$user->email}}</span>
+                        <span class="subtitle text-slate-500">{{$user->admin}} 💪</span>
                     </div>
                 </div>
             </div>
-            <!--Button content -->
-            <div class="user-option mx-auto sm:ml-auto sm:mr-0">
-                <button class="btn inline-block select-none no-underline align-middle cursor-pointer whitespace-nowrap px-4 py-1.5 rounded text-base font-medium leading-6 tracking-tight text-white text-center border-0 bg-[#6911e7] hover:bg-[#590acb] duration-300" type="button">Follow</button>
+            @if ($user->admin==0)
+                <div class="user-option mx-auto sm:ml-auto sm:mr-0">
+                <button class="btn inline-block select-none no-underline align-middle cursor-pointer whitespace-nowrap px-4 py-1.5 rounded text-base font-medium leading-6 tracking-tight text-white text-center border-0 bg-[#6911e7] hover:bg-[#590acb] duration-300" type="button">{{$user->id}}</button>
             </div>
+            @else
+                <div class="user-option mx-auto sm:ml-auto sm:mr-0">
+                <button class="btn inline-block select-none no-underline align-middle cursor-pointer whitespace-nowrap px-4 py-1.5 rounded text-base font-medium leading-6 tracking-tight text-white text-center border-0 bg-[#e7b511] hover:bg-[#cbae0a] duration-300" type="button">{{$user->id}}</button>
+            </div>
+            @endif
+            <!--Button content -->
+
             <!--Close Button content -->
         </div>
+        @endforeach
+
         <!--User row -->
 
      
