@@ -15,6 +15,19 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('admin-actu-lister')" :active="request()->routeIs('dashboard')">
+                        {{ __('Actu-lister') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('admin-actu-editer')" :active="request()->routeIs('dashboard')">
+                        {{ __('Actu-editer') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('admin-user')" :active="request()->routeIs('dashboard')">
+                        {{ __('Utilisateurs') }}
+                    </x-nav-link>
+
                 </div>
             </div>
 

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ActuController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MoncompteController;
 
@@ -33,5 +35,16 @@ Route::get('/panier', [MoncompteController::class,'panier'])->name("panier");
 
 
 Route::get('/admin', [DashboardController::class,'index'])->middleware(['auth'])->name("dashboard");
+
+
+
+Route::get('/admin/actu-lister', [ActuController::class,'index'])->middleware(['auth'])->name("admin-actu-lister") ;
+
+Route::get('/admin/actu-editer', [ActuController::class,'index'])->middleware(['auth'])->name("admin-actu-editer") ;
+
+Route::get('/admin/user', [UserController::class,'index'])->middleware(['auth'])->name("admin-user") ;
+
+
+
 
 
