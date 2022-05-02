@@ -16,4 +16,11 @@ class ActuController extends Controller
         
         return view ("admin.actu-editer") ;
     }
+
+    public function saveInDb(Request $request){
+
+        $request->validate([""]) ;
+
+        return back() ;
+    }
 }

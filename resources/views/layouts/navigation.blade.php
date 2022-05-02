@@ -20,8 +20,8 @@
                         {{ __('Actu-lister') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('admin-actu-editer')" :active="request()->routeIs('dashboard')">
-                        {{ __('Actu-editer') }}
+                    <x-nav-link :href="route('admin-actu-editer')" :active="request()->routeIs('admin-actu-editer')">
+                        {{ __('Ajouter actu') }}
                     </x-nav-link>
 
                     <x-nav-link :href="route('admin-user')" :active="request()->routeIs('dashboard')">
