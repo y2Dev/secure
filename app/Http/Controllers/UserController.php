@@ -14,4 +14,10 @@ class UserController extends Controller
 
         return view ("admin.user", compact("users")) ;
     }
+
+                /* Management of right users */
+    public function manageRight($i=0){
+
+        return back () ;
+    }
 }

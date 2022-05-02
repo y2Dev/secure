@@ -45,6 +45,10 @@ Route::get('/admin/actu-editer', [ActuController::class,'index'])->middleware(['
 Route::get('/admin/user', [UserController::class,'index'])->middleware(['auth'])->name("admin-user") ;
 
 
+                                    /* Management of right users */
+Route::get('/admin/user/right/{id}', [UserController::class,'manageRight'])->middleware(['auth'])->name("admin-user-right") ;
+
+
 
 
 
