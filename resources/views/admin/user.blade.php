@@ -51,12 +51,12 @@
             @if ($user->admin==0)
                 <div class="user-option mx-auto sm:ml-auto sm:mr-0">
                     
-                <a href="{{route("admin-user-right", ["id"=>$user->id])}}" class="btn inline-block select-none no-underline align-middle cursor-pointer whitespace-nowrap px-4 py-1.5 rounded text-base font-medium leading-6 tracking-tight text-white text-center border-0 bg-[#6911e7] hover:bg-[#590acb] duration-300" type="button">{{$user->id}}</a>
+                <a href="{{route("admin-user-right", ["user"=>$user])}}" class="btn inline-block select-none no-underline align-middle cursor-pointer whitespace-nowrap px-4 py-1.5 rounded text-base font-medium leading-6 tracking-tight text-white text-center border-0 bg-[#6911e7] hover:bg-[#590acb] duration-300" type="button">{{$user->id}}</a>
             </div>
             @else
                 <div class="user-option mx-auto sm:ml-auto sm:mr-0">
 
-                <a href="{{route("admin-user-right", ["id"=>$user->id])}}" class="btn inline-block select-none no-underline align-middle cursor-pointer whitespace-nowrap px-4 py-1.5 rounded text-base font-medium leading-6 tracking-tight text-white text-center border-0 bg-[#e7b511] hover:bg-[#cbae0a] duration-300" type="button">{{$user->id}}</a>
+                <a href="{{route("admin-user-right", ["user"=>$user])}}" class="btn inline-block select-none no-underline align-middle cursor-pointer whitespace-nowrap px-4 py-1.5 rounded text-base font-medium leading-6 tracking-tight text-white text-center border-0 bg-[#e7b511] hover:bg-[#cbae0a] duration-300" type="button">{{$user->id}}</a>
             </div>
             @endif
             <!--Button content -->

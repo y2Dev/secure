@@ -46,7 +46,7 @@ Route::get('/admin/user', [UserController::class,'index'])->middleware(['auth'])
 
 
                                     /* Management of right users */
-Route::get('/admin/user/right/{id}', [UserController::class,'manageRight'])->middleware(['auth'])->name("admin-user-right") ;
+Route::get('/admin/user/right/{user}', [UserController::class,'manageRight'])->middleware(['auth'])->name("admin-user-right") ;
 
 
 
