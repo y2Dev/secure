@@ -55,11 +55,11 @@ Route::get('/admin/actu-lister', [ActuController::class,'index'])->name("admin-a
 
 
 Route::get('/admin/actu-editer', [ActuController::class,'editer'])->name("admin-actu-editer") ;
-Route::post('/admin/actu-editer', [ActuController::class,'saveInDb'])->name("admin-actu-editer") ;
+Route::post('/admin/actu-editer', [ActuController::class,'create'])->name("admin-actu-editer") ;
 
 
 Route::get('/admin/actu-editer/{actu}', [ActuController::class,'editer'])->name("admin-actu-modifier") ;
-// Route::post('/admin/actu-editer/{actu}', [ActuController::class,''])->name("admin-actu-modifier") ;
+Route::post('/admin/actu-editer/{actu}', [ActuController::class,'update'])->name("admin-actu-modifier") ;
 
 // Route::get('/admin/actu-supprimer/{actu}', [ActuController::class,'supprimer'])->name("admin-actu-supprimer") ;
 

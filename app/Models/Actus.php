@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Actus extends Model
 {
     use HasFactory;
+
+    protected $fillable=[
+        "titre",
+        "description",
+        "image"] ;
 }

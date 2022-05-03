@@ -23,9 +23,9 @@ class ActuController extends Controller
         return view ("admin.actu-editer", compact("actu")) ;
     }
 
-
-    public function saveInDb(Request $request, Actus $actu){
-        dd($actu) ;
+            /* Création d'une actu */
+    public function create(Request $request){
+        // dd($actu) ;
         
         $validate = $request->validate(
 
@@ -71,5 +71,16 @@ class ActuController extends Controller
 
 
         return back() ;
+    }
+
+    public function update(Request $request, Actus $actu){
+
+        $validate = $request->validate(
+
+            /*   On met à jour les informations en commentaire   */
+            $actu->update(["titre" => $request->titre])
+        ) ;
+
+        // dd ($actu) ;
     }
 }
