@@ -12,7 +12,11 @@
                     Actu-Editer
                     
                     <!-- component -->
-                    <form action="{{route("admin-actu-editer")}}" method="POST" enctype="multipart/form-data">
+                    {{-- 
+                                                        LA PRECEDENTE
+                        <form action="{{route("admin-actu-editer")}}" method="POST" enctype="multipart/form-data">
+                         --}}
+                    <form action="{{route("admin-actu-modifier",['actu'=>$actu])}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="bg-indigo-50 min-h-screen md:px-20 pt-6">
                         <div class=" bg-white rounded-md px-6 py-10 max-w-2xl mx-auto">

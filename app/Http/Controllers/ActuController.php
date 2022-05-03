@@ -4,22 +4,39 @@ namespace App\Http\Controllers;
 
 use App\Models\Actus;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ActuController extends Controller
 {
     //
     public function index(){
 
-        return view ("admin.actu-lister") ;
+        $actuList = Actus::all() ;
+
+        return view ("admin.actu-lister", compact("actuList")) ;
     }
 
-    public function editer(){
+    public function editer(Actus $actu){
+
+    
         
-        return view ("admin.actu-editer") ;
+        return view ("admin.actu-editer", compact("actu")) ;
     }
 
 
-    public function saveInDb(Request $request){
+    public function saveInDb(Request $request, Actus $actu){
+        dd($actu) ;
+        
+        $validate = $request->validate(
+
+            ["titre"=>"required"]
+            ) ;
+
+            $saveActu = new Actus ;
+            $saveActu->titre = $request->titre ;
+            $saveActu->description = $request->description ;
+    
+            
 
         // dd($request) ;
 
@@ -34,25 +51,24 @@ class ActuController extends Controller
             /* Formatage de mon image */
             $fileName = time().".".$image->getClientOriginalExtension() ;
 
-            dd($fileName) ;
+            // dd($fileName) ;
 
             /* Copie de l'image sur le serveur */
-            Image::make("$image")->save(storage_path("/upload".$fileName)) ;
+            // Image::make("$image")->save(storage_path("/upload".$fileName)) ;
+
+            $path = Storage::putFile('public', $request->file('imageActu')) ;
+            $saveActu->image=$path ;
+
+            // dd($path) ;
         }
          ;
 
         
+         $saveActu->save() ;
 
-        // $validate = $request->validate(
 
-        //     ["titre"=>"required"]
-        //     ) ;
+        
 
-        //     $saveActu = new Actus ;
-        //     $saveActu->titre = $request->titre ;
-        //     $saveActu->description = $request->description ;
-    
-        //     $saveActu->save() ;
 
         return back() ;
     }
