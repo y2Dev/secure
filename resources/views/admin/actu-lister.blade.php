@@ -15,37 +15,37 @@
                             <div class="flex flex-col gap-4 items-center justify-center bg-white">
 
                                 <!-- Card 1 -->
-                                <a href="{{route("admin-actu-modifier",['actu'=>$actu])}}" class="w-[30rem] border-2 border-b-4 border-gray-200 rounded-xl hover:bg-gray-50">
+                                <div  class="w-[30rem] border-2 border-b-4 border-gray-200 rounded-xl hover:bg-gray-50">
                             
-                                <!-- Badge -->
-                                <p class="bg-sky-500 w-fit px-4 py-1 text-sm font-bold text-white rounded-tl-lg rounded-br-xl"> {{$actu->created_at}} </p>
+                                    <!-- Badge -->
+                                    <p class="bg-sky-500 w-fit px-4 py-1 text-sm font-bold text-white rounded-tl-lg rounded-br-xl"> {{$actu->created_at}} </p>
 
-                                <div class="grid grid-cols-6 p-5 gap-y-2">
-                            
-                                    <!-- Profile Picture -->
-                                    <div>
-                                    <img src="{{Storage::url($actu->image)}}" class="max-w-16 max-h-16 rounded-full" />
-                                    
+                                    <div class="grid grid-cols-6 p-5 gap-y-2">
+                                
+                                        <!-- Profile Picture -->
+                                        <div>
+                                        <img src="{{Storage::url($actu->image)}}" class="max-w-16 max-h-16 rounded-full" />
+                                        
+                                        </div>
+                                
+                                        <!-- Description -->
+                                        <div class="col-span-5 md:col-span-4 ml-4">
+                                
+                                
+                                        <p class="text-gray-600 font-bold"> {{$actu->titre}} </p>
+                                
+                                
+                                        <p class="text-gray-400"> {{$actu->description}} </p>
+                                
+                                        </div>
+                                
+                                        <!-- Update & Delete -->
+                                        <div class="flex col-start-2 ml-4 md:col-start-auto md:ml-0 md:justify-end">
+                                            <a href="{{route("admin-actu-modifier", $actu)}}" class="rounded-lg text-sky-500 font-bold bg-sky-100  py-1 px-1 text-sm w-fit h-fit"> Modifier </a>
+                                            <a href="{{route("admin-actu-supprimer", $actu)}}" class="rounded-lg text-sky-500 font-bold bg-sky-100  py-1 px-1 text-sm w-fit h-fit"> Supprimer </a>
+                                        </div>
+                                
                                     </div>
-                            
-                                    <!-- Description -->
-                                    <div class="col-span-5 md:col-span-4 ml-4">
-                            
-                            
-                                    <p class="text-gray-600 font-bold"> {{$actu->titre}} </p>
-                            
-                            
-                                    <p class="text-gray-400"> {{$actu->description}} </p>
-                            
-                                    </div>
-                            
-                                    <!-- Price -->
-                                    <div class="flex col-start-2 ml-4 md:col-start-auto md:ml-0 md:justify-end">
-                                    <button type="submit" class="rounded-lg text-sky-500 font-bold bg-sky-100  py-1 px-1 text-sm w-fit h-fit"> $ 5 </button>
-                                    <br>
-                                    <button type="submit" class="rounded-lg text-sky-500 font-bold bg-sky-100  py-1 px-1 text-sm w-fit h-fit"> $ 5 </button>
-                                    </div>
-                            
                                 </div>
                             </div>     
 

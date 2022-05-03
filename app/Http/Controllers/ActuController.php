@@ -76,11 +76,19 @@ class ActuController extends Controller
     public function update(Request $request, Actus $actu){
 
         $validate = $request->validate(
-
-            /*   On met à jour les informations en commentaire   */
-            $actu->update(["titre" => $request->titre])
+            ["titre"=>"required"]
         ) ;
-
+            /*   On met à jour les informations en commentaire   */
+            $actu->update(["titre" => $request->titre, "description" => $request->description ]) ;
+            return back() ;
         // dd ($actu) ;
+    }
+
+    public function delete(Actus $actu){
+
+        $actu->delete() ;
+
+        return back() ;
+
     }
 }

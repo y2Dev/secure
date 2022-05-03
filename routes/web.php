@@ -61,7 +61,7 @@ Route::post('/admin/actu-editer', [ActuController::class,'create'])->name("admin
 Route::get('/admin/actu-editer/{actu}', [ActuController::class,'editer'])->name("admin-actu-modifier") ;
 Route::post('/admin/actu-editer/{actu}', [ActuController::class,'update'])->name("admin-actu-modifier") ;
 
-// Route::get('/admin/actu-supprimer/{actu}', [ActuController::class,'supprimer'])->name("admin-actu-supprimer") ;
+Route::get('/admin/actu-supprimer/{actu}', [ActuController::class,'delete'])->name("admin-actu-supprimer") ;
 
 
 
