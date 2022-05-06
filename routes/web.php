@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ActuController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MoncompteController;
@@ -67,3 +68,11 @@ Route::get('/admin/actu-supprimer/{actu}', [ActuController::class,'delete'])->na
 
 
 
+// Route::get('/detail', function () {
+//     return view('detail-actu');
+// });
+
+
+Route::get('/index', [NewsController::class,'index'])->name("index") ;
+
+Route::get('/detail', [NewsController::class,'detail'])->name("detail") ;
