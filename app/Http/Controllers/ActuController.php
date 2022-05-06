@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Actus;
+use App\Models\Semaine;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -17,10 +18,11 @@ class ActuController extends Controller
     }
 
     public function editer(Actus $actu){
+        $semaines = Semaine::all() ;
 
     
         
-        return view ("admin.actu-editer", compact("actu")) ;
+        return view ("admin.actu-editer", compact("actu","semaines")) ;
     }
 
             /* Création d'une actu */
@@ -35,6 +37,7 @@ class ActuController extends Controller
             $saveActu = new Actus ;
             $saveActu->titre = $request->titre ;
             $saveActu->description = $request->description ;
+            $saveActu->semaine_id = $request->semaine_id ;
     
             
 
@@ -78,8 +81,8 @@ class ActuController extends Controller
         $validate = $request->validate(
             ["titre"=>"required"]
         ) ;
-            /*   On met à jour les informations en commentaire   */
-            $actu->update(["titre" => $request->titre, "description" => $request->description ]) ;
+            /*   On met à jour les informations */
+            $actu->update(["titre" => $request->titre, "semaine_id" => $request->semaine_id, "description" => $request->description ]) ;
             return back() ;
         // dd ($actu) ;
     }
